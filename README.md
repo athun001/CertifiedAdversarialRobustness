@@ -1,9 +1,14 @@
 # Certified Adversarial Robustness
 
 * Randomized Smoothing of All Shapes and Sizes
+* Certified Adversarial Robustness via Randomized α-Smoothing for Regression Models
+* Input-Specific Robustness Certification for Randomized Smoothing
+* Higher-Order Certification for Randomized Smoothing
+* Certified Robustness for Networks with Structured Outputs
 * Provable defenses adversarial polytype
+* DetectorGuard: Provably Securing Object Detectors against Localized Patch Hiding Attacks
 * Certified defense via randomized smoothing
-* randomized alpha smoothing
+* Certifiably Robust Object Detection against Patch Hiding Attacks via Patch-agnostic Masking
 * Detection as Regression: Certified Object Detection by Median Smoothing.
 * Certified Defense to Image Transformations via Randomized Smoothing
 * certified defenses against adversarial examples
