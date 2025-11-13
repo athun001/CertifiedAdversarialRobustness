@@ -1,6 +1,7 @@
 # Certified Adversarial Robustness
 
 * Randomized Smoothing of All Shapes and Sizes
+* Incremental Randomized Smoothing (IRS) https://arxiv.org/abs/2305.19521 
 * Certified Adversarial Robustness via Randomized α-Smoothing for Regression Models
 * Input-Specific Robustness Certification for Randomized Smoothing
 * Higher-Order Certification for Randomized Smoothing
