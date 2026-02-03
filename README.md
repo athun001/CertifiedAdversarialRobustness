@@ -1,5 +1,31 @@
 # Certified Adversarial Robustness
 
+  
+**Average Certified Radius is a Poor Metric for Randomized Smoothing**
+
+**Summary**
++ Authors discourage the use of Average Certified Radius (ACR) to certify robustness of neural networks by claiming that improvement on easy examples contributes more to the metric than hard examples, reduce accuracy on hard inputs. By discarding hard data during training, data reweighting with certified radius and incorporating PGD attack, authors are able to achieve SOTA ACR thereby highlighting the need of a different metric. 
+
+**Contributions**
++ Authors are able to increase ACR by showing that improvement on easy samples could contribute more than 1000 times to ACR than same magnitude of improvement on hard samples.
++ They showed empirically as well as theorectically why ACR is a bad metric. First such work to highlight this.
++ They explained why it is better to report highest achieveable certified accuracy at specified radii.
+  
+**Strengths and weaknesses** (2-3 bullets for each)
++ Weaknesses
+  -  Since Authors compared results with MACER paper, Table 2 should have added the gradient norm ratio for MACER.
+  -  Existing papers which authors mention use other metrics than ACR to report their results. Authors could have incorporated these metrics when comparing results.
+
++ Strengths
+  -  Using the Adaptive (PGD) attack on sphere should give better empirical robustness as compared to SOTA randomized smoothing based techniques such as SmoothAdv, Consistency, SmoothMix or CAT-RS.
+  -  Technique successfully increases the ACR with small modifications to original Cohen paper.
+      
+**My opinions**
+
++  Can using PGD as part of SmoothAdv, Consistency, SmoothMix or CAT-RS help increase ACR?
++  Can incorporating PGD in Detection as Regression paper help improve the metrics?
+
+
 * Randomized Smoothing of All Shapes and Sizes
 * Incremental Randomized Smoothing (IRS) https://arxiv.org/abs/2305.19521 
 * Certified Adversarial Robustness via Randomized α-Smoothing for Regression Models
@@ -14,7 +40,6 @@
 * Certified Defense to Image Transformations via Randomized Smoothing
 * certified defenses against adversarial examples
 * certified adversarial robustness for free
-* Average Certified Radius is a Poor Metric for Randomized Smoothing
 * SoK: Certified Robustness for Deep Neural Networks
 * Certified Training: Small Boxes are All You Need
 * Certified Robustness Under Bounded Levenshtein Distance
