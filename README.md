@@ -26,9 +26,44 @@
 +  Can incorporating PGD in Detection as Regression paper help improve the metrics?
 
 
+
+
+---
+  
+**Incremental Randomized Smoothing (IRS)**
+
+**Summary**
++ Randomized smoothing is a scalable incomplete deterministic certification that offers statistical guarantees on neural network robustness. But it is slow, to achieve high statistical guarantees, the technique uses monte carlo smoothing which can be equated to generating few thousand isotropic gaussian noises and adding it to every image during inference to evaluate neural network robustness. If a neural network approximation such as quantization or pruning is used, this technique has to be repeated again. Instead, authors cleverly using a cache of top predicted class index, seeds for gaussian corruptions and lower confidence bound come up with a simple technique that reuses the certification guarantees for original smoothed model to certify this approximated model with very few samples.
+
+**Contributions**
++ Can achieve 4.1x certification speedup over certification that applies randomized smoothing of approximate model from scratch.
++ In some cases, IRS besides taking less certification time to obtain same ACR, can achieve higher ACR. (If we are limited by budget).
+  
+**Strengths and weaknesses** (2-3 bullets for each)
++ Weaknesses
+  -  When 20% network is pruned, slowdown is observed in 3 of the 9 cases and in 3 cases the improvement is marginal. Typically in most of the literature, pruning is more than 30% to notice improvement in storage performance. IRS might not be a feasible solution if network is pruned more than 50%.
+  -  In the paper, authors mention they only focus on quantization and pruning as neural network approximiations. In section 5, authors mention that quantization yields smaller zeta values making IRS more effective for quantization. Paper should not have included pruning as neural network approximation
+  -  Authors mentioned this, algorithm requires cache of top predicted class index, seeds for gaussian corruptions and lower confidence bound. This might grow in size if same technique were to be applied to other tasks such as object detection.
+  -  Paper uses ACR as a metric. ACR can be misleading as shown in paper: ACR is a poor metric for randomized smoothing.
+
++ Strengths
+  -  IRS can offer really good speedups for higher values of noise on quantized models.
+  -  The technique can possibly be applied even on network approximations such as distilled models.
+      
+**My opinions**
+
++  Authors could have leveraged structured pruning like 2:4 to get improved performance on nvidia gpus.
++  Will this work for other forms of quantization like int4?
+
+---
+
+
 * Randomized Smoothing of All Shapes and Sizes
-* Incremental Randomized Smoothing (IRS) https://arxiv.org/abs/2305.19521 
+
 * Certified Adversarial Robustness via Randomized α-Smoothing for Regression Models
+* Certifying confidence via randomized smoothing.
+* Black-box certification with randomized smoothing: A functional optimization based framework.
+* Tss: Transformation-specific smoothing for robustness certification.
 * Input-Specific Robustness Certification for Randomized Smoothing
 * Higher-Order Certification for Randomized Smoothing
 * Certified Robustness for Networks with Structured Outputs
