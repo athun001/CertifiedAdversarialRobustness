@@ -54,6 +54,7 @@
 
 +  Authors could have leveraged structured pruning like 2:4 to get improved performance on nvidia gpus.
 +  Will this work for other forms of quantization like int4?
++  While [IRS Paper] demonstrates significant speedups (4.1x) in certifying quantized models using ACR as a metric, [ACR Paper] argues that ACR itself may be a flawed metric, suggesting that future work should evaluate IRS using 'worst-case certified accuracy' instead.
 
 ---
 
