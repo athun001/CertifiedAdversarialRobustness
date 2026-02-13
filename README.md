@@ -106,3 +106,5 @@
 * Adversarially robust generalization requires more data
 * PERCEPTUAL ADVERSARIAL ROBUSTNESS: DEFENSE AGAINST UNSEEN THREAT MODELS
 * Elucidating the design space of diffusion based generative models
+* Certified defenses: Whytighter relaxations may hurt training?
+* Fast and effective robustness certification.
